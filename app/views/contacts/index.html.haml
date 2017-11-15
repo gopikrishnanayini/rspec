@@ -1,0 +1,35 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    / Theme Made By www.w3schools.com - No Copyright
+    %title Bootstrap Theme Company Page
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"}
+    %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"}
+  %body
+    %br/
+    .container
+      .row
+        %br/
+        %h1 Contact Listing
+        %table.table.table-bcontacted.table-striped
+          %thead
+            %tr
+              %th First Name
+              %th Last Name 
+              %th Email
+              %th Address
+              %th Description
+            - @contacts.each do |contact|
+              %tr
+                %td= contact.firstname
+                %td= contact.lastname
+                %td= contact.email
+                %td= contact.address
+                %td= contact.description
+                %td= link_to 'edit', edit_contact_path(contact)
+                %td= link_to 'destroy', contact_path(contact), method: :delete, data: { confirm: "Are You Sure You Want To delete the Record"}  
+    = link_to "New Contact", new_contact_path, :class => "btn btn-success"

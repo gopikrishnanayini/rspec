@@ -1,0 +1,32 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    / Theme Made By www.w3schools.com - No Copyright
+    %title Bootstrap Theme Company Page
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"}
+    %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"}
+  %body
+    %br/
+    .container
+      .row
+        %br/
+        %p
+          %strong First Name:
+          = @contact.firstname
+        %p
+          %strong Last Name:
+          = @contact.lastname
+        %p
+          %strong Email:
+          = @contact.email
+        %p
+          %strong Address:
+          = @contact.address
+        %p
+          %strong Description:
+          = @contact.description
+        = link_to 'Back', contacts_path, :class => "btn btn-success"

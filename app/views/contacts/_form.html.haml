@@ -1,0 +1,17 @@
+= form_for @contact do |f|
+  = f.label :FirstName
+  = f.text_field :firstname, placeholder: "First Name of the Contact"
+  %br
+  = f.label :LastName
+  = f.text_field :lastname, placeholder: "Last Name of the Contact"
+  %br
+  = f.label :Email
+  = f.text_field :email,placeholder: "Email of the Contact"
+  %br
+  = f.label :Address
+  = f.text_field :address, placeholder: "Address of the Contact"
+  %br
+  = f.label :Description
+  = f.text_field :description, placeholder: "Description of the Contact"
+  %br
+  = f.submit :Submit
